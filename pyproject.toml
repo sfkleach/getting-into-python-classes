@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "getting-into-python-classes"
+version = "0.1.0"
+description = ""
+authors = ["Stephen Leach <sfkleach@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+scipy = "^1.15.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
