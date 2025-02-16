@@ -1,18 +1,6 @@
 import math
 import scipy.stats as stats
 
-def probability(ndist, x):
-    return stats.norm.cdf(x, ndist[0], ndist[1])
-
-def variance(ndist):
-    return ndist[1] * ndist[1]
-
-def random(ndist):
-    return stats.norm.rvs(loc=ndist[0], scale=ndist[1])
-
-def midpoint(ndist):
-    return ndist[0]
-
 def distance(point2d):
 	(x, y) = point2d
 	return math.sqrt(x*x + y*y)
@@ -31,6 +19,15 @@ def midpoint(point2d):
 	(x, y) = point2d
 	return 0.5 * x, 0.5 * y
 
-if __name__ == '__main__':
-    print( probability(rotate((1, 0), math.pi/2), 1) )
-    # Prints 0.8413447460685429 !
+def probability(ndist, x):
+    return stats.norm.cdf(x, ndist[0], ndist[1])
+
+def variance(ndist):
+    return ndist[1] * ndist[1]
+
+def random(ndist):
+    return stats.norm.rvs(loc=ndist[0], scale=ndist[1])
+
+def midpoint(ndist):
+    """This is a deliberate mistake illustrating when we have two functions with the same name."""
+    return ndist[0]

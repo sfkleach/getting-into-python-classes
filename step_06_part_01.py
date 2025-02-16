@@ -16,7 +16,7 @@ class Point2D:
         return math.sqrt(self._x * self._x + self._y * self._y)
 
     def angle(self):
-        return math.atan2(self._y, self._x)
+        return math.atan2(self._x, self._y)
 
     def rotate(self, theta):
         ct = math.cos(theta)
@@ -27,8 +27,8 @@ class Point2D:
         return Point2D(0.5 * self._x, 0.5 * self._y)
     
     def distance_between(self, other):
-        dx = self._x - other.x()
-        dy = self._y - other.y()
+        dx = self._x - other._x
+        dy = self._y - other._y
         return math.sqrt(dx * dx + dy * dy)
 
 class PolarCoords:
@@ -57,10 +57,9 @@ class PolarCoords:
     
     def distance_between(self, other):
         r2self = self._r * self._r
-        d = other.distance()
-        r2other = d * d
-        cdelta = math.cos(self._theta - other.angle())
-        return math.sqrt(r2self + r2other - 2 * self._r * d * cdelta)
+        r2other = other._r * other._r
+        cdelta = math.cos(self._theta - other._theta)
+        return math.sqrt(r2self + r2other - 2 * self._r * other._r * cdelta)
     
 class Line:
 
@@ -72,3 +71,21 @@ class Line:
     def below_line(self, point2d: Point2D):
         """Returns True if the point is below the line"""
         return point2d.y() < self._m * point2d.x() + self._c
+
+class NormalDistribution:
+    
+    def __init__(self, mean, stddev):
+        self.mean = mean
+        self.stddev = stddev
+
+    def probability(self, x):
+        return stats.norm.cdf(x, self.mean, self.stddev)
+
+    def variance(self):
+        return self.stddev * self.stddev
+
+    def random(self):
+        return stats.norm.rvs(loc=self.mean, scale=self.stddev)
+
+    def midpoint(self):
+        return self.mean

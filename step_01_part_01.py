@@ -1,4 +1,3 @@
-
 import math
 
 def distance(x, y):
@@ -7,7 +6,7 @@ def distance(x, y):
 
 def angle(x, y):
 	'''Return the angle in radians between the positive x-axis and the point (x, y).'''
-	return math.atan2(x, y)
+	return math.atan2(y, x)
 
 def rotate(x, y, theta):
 	'''Return the point (x, y) rotated by theta radians.'''
