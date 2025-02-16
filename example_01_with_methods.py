@@ -16,7 +16,7 @@ class Point2D:
 	def rotate(self, theta):
 		ct = math.cos(theta)
 		st = math.sin(theta)
-		return ct * self.x - st * self.y, st * self.x + ct * self.y
+		return Point2D(ct * self.x - st * self.y, st * self.x + ct * self.y)
 
 	def midpoint(self):
 		return 0.5 * self.x, 0.5 * self.y

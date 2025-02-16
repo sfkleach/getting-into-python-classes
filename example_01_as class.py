@@ -16,7 +16,7 @@ def angle(p):
 def rotate(p, theta):
 	ct = math.cos(theta)
 	st = math.sin(theta)
-	return ct * p.x - st * p.y, st * p.x + ct * p.y
+	return Point2D(ct * p.x - st * p.y, st * p.x + ct * p.y)
 
 def midpoint(p):
 	return 0.5 * p.x, 0.5 * p.y
