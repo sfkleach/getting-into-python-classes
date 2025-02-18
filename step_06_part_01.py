@@ -16,7 +16,7 @@ class Point2D:
         return math.sqrt(self._x * self._x + self._y * self._y)
 
     def angle(self):
-        return math.atan2(self._x, self._y)
+        return math.atan2(self._y, self._x)
 
     def rotate(self, theta):
         ct = math.cos(theta)

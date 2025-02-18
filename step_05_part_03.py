@@ -62,7 +62,7 @@ class Line:
 
     def below_line(self, point2d: Point2D):
         """Returns True if the point is below the line"""
-        return point2d.y < self.m * point2d.x + self.c
+        return point2d.y() < self.m * point2d.x() + self.c
     
 
 class NormalDistribution:

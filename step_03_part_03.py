@@ -12,7 +12,7 @@ def distance(p):
 	return math.sqrt(p.x*p.x + p.y*p.y)
 
 def angle(p):
-	return math.atan2(p.x, p.y)
+	return math.atan2(p.y, p.x)
 
 def rotate(p, theta):
 	ct = math.cos(theta)

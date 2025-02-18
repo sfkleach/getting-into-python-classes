@@ -7,7 +7,7 @@ def distance(point2d):
 
 def angle(point2d):
 	(x, y) = point2d
-	return math.atan2(x, y)
+	return math.atan2(y, x)
 
 def rotate(point2d, theta):
 	(x, y) = point2d

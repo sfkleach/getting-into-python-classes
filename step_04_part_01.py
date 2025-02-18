@@ -24,7 +24,7 @@ class Point2D:
 
 
 class NormalDistribution:
-    
+
     def __init__(self, mean, stddev):
         self.mean = mean
         self.stddev = stddev
