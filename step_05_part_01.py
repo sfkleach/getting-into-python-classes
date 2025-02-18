@@ -1,5 +1,6 @@
-
 import math
+import scipy.stats as stats
+
 
 class Point2D:
 
@@ -20,8 +21,8 @@ class Point2D:
 
     def midpoint(self):
         return Point2D(0.5 * self.x, 0.5 * self.y)
-    
-    
+
+
 class Line:
 
     def __init__(self, m, c):
@@ -36,7 +37,7 @@ class Line:
 
 class NormalDistribution:
     """We can ignore this class for the remaining examples - included for completeness"""
-    
+
     def __init__(self, mean, stddev):
         self.mean = mean
         self.stddev = stddev

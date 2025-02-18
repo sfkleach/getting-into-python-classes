@@ -1,4 +1,5 @@
 import math
+import scipy.stats as stats
 
 class Point2D:
 
@@ -73,7 +74,8 @@ class Line:
         return point2d.y() < self._m * point2d.x() + self._c
 
 class NormalDistribution:
-    
+    """We can ignore this class for the remaining examples - included for completeness"""
+
     def __init__(self, mean, stddev):
         self.mean = mean
         self.stddev = stddev
